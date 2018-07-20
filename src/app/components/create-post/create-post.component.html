@@ -1,0 +1,58 @@
+<h1>Add a new post</h1>
+<div class="container">
+	<form class="" [formGroup] = "addPostForm" >
+		<div class="row form-group">
+			<div>
+				<label class="col-sm-2">Post Title</label>
+			</div>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" formControlName="postTitle"
+					[(ngModel)]="addNewPostForm.postTitle"
+				>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div>
+				<label class="col-sm-2">Post Description</label>
+			</div>
+			<div class="col-sm-5">
+				<textarea name="name" cols="80" formControlName="postDescription"></textarea>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div>
+				<label class="col-sm-2">Upload file</label>
+			</div>
+			<div class="col-sm-5">
+				<input type="file" formControlName="uploadFile"/>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div>
+				<label class="col-sm-2">Tags</label>
+			</div>
+			<div class="col-sm-5">
+				<textarea name="name" cols="80" formControlName="postTags"></textarea>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div>
+				<label class="col-sm-2">Publish ?</label>
+			</div>
+			<div class="col-sm-5">
+				<input type="checkbox" formControlName= "postPublishing"/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-2">
+				<button class="btn btn-primary" type="button" name="button" [disabled]="disabledSaveBtn"  (click)="save()">Save</button>
+			</div>
+			<div class="col-sm-2">
+				<button class="btn btn-default" type="button" name="button" (click)="publish()">Publish</button>
+			</div>
+		</div>
+
+
+	</form>
+</div>
