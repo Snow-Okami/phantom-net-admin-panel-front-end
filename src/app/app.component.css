@@ -584,6 +584,10 @@ body {
   clear:both;
 }
 
+.btn-default.logout {
+  margin: 15px 15px 5px;
+}
+
 /* Responsive CSS */
 
 /* Mobile phones */
