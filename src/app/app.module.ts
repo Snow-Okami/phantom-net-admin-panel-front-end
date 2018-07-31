@@ -14,6 +14,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LayoutLoginComponent } from './layout-login/layout-login.component';
+import { LayoutHomeComponent } from './layout-home/layout-home.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AppRoutingModule } from './app-routing.module';
     CommentsComponent,
     AboutMeComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutLoginComponent,
+    LayoutHomeComponent,
   ],
   imports: [
     BrowserModule,
