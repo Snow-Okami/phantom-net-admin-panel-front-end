@@ -9,7 +9,7 @@ import { AuthService } from './auth.service'
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardService implements CanActivate {
+export class KeepLoggedinService implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -20,7 +20,7 @@ export class AuthGuardService implements CanActivate {
   }
   
   checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) { return true; }
+    if (!this.authService.isLoggedIn) { return true; }
 
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
@@ -28,7 +28,7 @@ export class AuthGuardService implements CanActivate {
     console.log(this.authService.redirectUrl);
 
     // Navigate to the login page with extras
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
     return false;
   }
 }

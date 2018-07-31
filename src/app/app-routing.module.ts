@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './auth-guard.service';
+import { KeepLoggedinService } from './keep-loggedin.service';
 
 import { LayoutHomeComponent } from './layout-home/layout-home.component';
 import { LayoutLoginComponent } from './layout-login/layout-login.component';
@@ -30,6 +31,7 @@ const routes : Routes = [
 	{
     path: '',
     component: LayoutLoginComponent,
+    canActivate: [KeepLoggedinService],
     children: [
       { path: 'login', component: LoginComponent },
     ]
