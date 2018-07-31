@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpService } from '../http.service'
 import { Router } from "@angular/router";
+import { Post } from '../post';
 
 @Component({
   selector: 'app-posts',
@@ -8,10 +9,13 @@ import { Router } from "@angular/router";
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+  posts: Post[];
 
-  constructor( public router: Router) { }
+  constructor( public router: Router, private http: HttpService) { }
 
   ngOnInit() {
+    this.http.getPosts()
+      .subscribe(posts => this.posts = posts);
   }
 
   navigateToCreatePost() {

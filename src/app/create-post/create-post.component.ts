@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 //Angular Form Modules
-import { FormsModule, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 class addNewPostFormObj {
   postTitle : string;
@@ -21,24 +21,24 @@ export class CreatePostComponent implements OnInit {
   @Input() addNewPostForm = new addNewPostFormObj();
   title :string = 'Add New Post';
   // Form Data
-  addPostForm : FormGroup;
-  postTitle : FormControl;
-  file : FormControl;
-  uploadFile : FormControl;
-  postDescription : FormControl;
-  postTags : FormControl;
-  postPublishing : FormControl;
+  addPostForm: FormGroup;
+  postTitle: FormControl;
+  file: FormControl;
+  uploadFile: FormControl;
+  postDescription: FormControl;
+  postTags: FormControl;
+  postPublishing: FormControl;
 
 
-  disabledSaveBtn : boolean = true;
+  disabledSaveBtn: boolean = true;
 
   constructor() {
-    this.createFormControls();
-    this.createForm();
+    
   }
 
   ngOnInit() {
-
+    this.createFormControls();
+    this.createForm();
   }
 
   createFormControls() {
@@ -48,6 +48,7 @@ export class CreatePostComponent implements OnInit {
     this.postTags = new FormControl('', [ Validators.required ]);
     this.postPublishing = new FormControl('', [ Validators.required ]);
   }
+
   createForm() {
     this.addPostForm = new FormGroup({
       postTitle : this.postTitle,
@@ -62,7 +63,7 @@ export class CreatePostComponent implements OnInit {
     console.log('save clicked!!')
   }
   publish() {
-    console.log('publish clicked!!')
+    console.log('publish clicked!!', this.addPostForm.value);
   }
 
 }
