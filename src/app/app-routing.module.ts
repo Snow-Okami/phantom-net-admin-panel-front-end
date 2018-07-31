@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuardService } from './auth-guard.service';
 
 import { LayoutHomeComponent } from './layout-home/layout-home.component';
 import { LayoutLoginComponent } from './layout-login/layout-login.component';
@@ -15,6 +16,7 @@ const routes : Routes = [
 	{
     path: '',
     component: LayoutHomeComponent,
+    canActivate: [AuthGuardService],
     children: [
 			{ path: '', component: DashboardComponent, pathMatch: 'full' },
 			{ path: 'posts', component: PostsComponent },
@@ -22,7 +24,7 @@ const routes : Routes = [
 			{ path: 'messages', component: CommentsComponent },
 			{ path: 'aboute-me', component: AboutMeComponent },
 			{ path: 'create-post', component: CreatePostComponent },
-			{ path: 'dashboard', component: DashboardComponent },
+			{ path: 'dashboard', redirectTo: '' },
     ]
 	},
 	{

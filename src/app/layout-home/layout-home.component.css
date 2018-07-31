@@ -288,8 +288,8 @@ html, body, .container-fluid, .row {
 }
 
 .sidebar .nav li a:hover, .sidebar .nav li.current > a {
- background: #fff;
- color: #555;
+  background: #fff;
+  color: #555;
   border-bottom:0px;
 }
 
