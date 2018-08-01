@@ -1,0 +1,33 @@
+.drop-image-cover {
+  position: relative;
+  border: 1px solid #303030;
+  width: fit-content;
+}
+
+.drop-image {
+  position: relative;
+  opacity: 0;
+  height: 167px;
+  width: 300px;
+  outline: none;
+  box-shadow: none;
+  z-index: 0;
+}
+
+.drag-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+#upload-image {
+  width: 300px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}

@@ -10,6 +10,18 @@ import { Post } from './post';
 export class HttpService {
   private baseUrl = 'http://127.0.0.1:3000/api';
 
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  };
+
+  private httpOptionsENC = {
+    headers: new HttpHeaders({
+      'enctype': 'multipart/form-data'
+    })
+  };
+
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<Post[]> {
@@ -18,6 +30,14 @@ export class HttpService {
       tap(heroes => console.log('fetched heroes')),
       catchError(this.handleError('getHeroes', []))
     );;
+  }
+
+  createPost(post): Observable<any> {
+    let url = this.baseUrl + '/post';
+    return this.http.post<any>(url, post, this.httpOptionsENC).pipe(
+      tap(heroes => console.log('fetched heroes')),
+      catchError(this.handleError('getHeroes', []))
+    );
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

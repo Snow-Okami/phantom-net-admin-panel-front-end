@@ -1,7 +1,8 @@
 export interface Post {
-  postDescription: String,
-  postPublishing: String,
-  postTags: String,
-  postTitle: String,
-  uploadFile: String
+  title: String,
+  createdAt: String,
+  createdBy: String,
+  description: String,
+  published: Boolean,
+  filename: String
 }

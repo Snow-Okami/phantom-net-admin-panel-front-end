@@ -21,8 +21,16 @@
 			<div>
 				<label class="col-sm-2">Upload file</label>
 			</div>
-			<div class="col-sm-5">
-				<input type="file" formControlName="uploadFile"/>
+			<div class="col-sm-9">
+				<div class="upload-file-cover row">
+					<div class="drop-image-cover col-sm-6">
+						<input type="file" formControlName="image" class="drop-image" (change)="previewFile()" />
+						<P class="drag-msg">Drag &amp; Drop File Here</P>
+					</div>
+					<div class="image-cover col-sm-6">
+						<img src="" alt="Image preview..." id="upload-image">
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row form-group">
