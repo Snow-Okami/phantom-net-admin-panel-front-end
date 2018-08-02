@@ -6,7 +6,7 @@
 				<label class="col-sm-2">Post Title</label>
 			</div>
 			<div class="col-sm-5">
-				<input type="text" class="form-control" formControlName="postTitle">
+				<input type="text" class="form-control" formControlName="title">
 			</div>
 		</div>
 		<div class="row form-group">
@@ -14,7 +14,7 @@
 				<label class="col-sm-2">Post Description</label>
 			</div>
 			<div class="col-sm-5">
-				<textarea name="name" cols="80" formControlName="postDescription"></textarea>
+				<textarea name="name" cols="80" formControlName="description"></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
@@ -24,7 +24,7 @@
 			<div class="col-sm-9">
 				<div class="upload-file-cover row">
 					<div class="drop-image-cover col-sm-6">
-						<input type="file" formControlName="image" class="drop-image" (change)="previewFile()" />
+						<input type="file" class="drop-image" (change)="previewFile()" />
 						<P class="drag-msg">Drag &amp; Drop File Here</P>
 					</div>
 					<div class="image-cover col-sm-6">
@@ -38,7 +38,7 @@
 				<label class="col-sm-2">Tags</label>
 			</div>
 			<div class="col-sm-5">
-				<textarea name="name" cols="80" formControlName="postTags"></textarea>
+				<textarea name="name" cols="80" formControlName="tags"></textarea>
 			</div>
 		</div>
 		<div class="row form-group">
@@ -46,7 +46,7 @@
 				<label class="col-sm-2">Publish ?</label>
 			</div>
 			<div class="col-sm-5">
-				<input type="checkbox" formControlName= "postPublishing"/>
+				<input type="checkbox" formControlName= "published"/>
 			</div>
 		</div>
 
